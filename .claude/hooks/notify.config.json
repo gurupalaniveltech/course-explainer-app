@@ -1,0 +1,21 @@
+{
+  "toast": true,
+
+  "sound": {
+    "enabled": false,
+
+    "input": {
+      "beeps": [
+        { "freq": 880, "ms": 140 },
+        { "freq": 1175, "ms": 160 }
+      ]
+    },
+
+    "done": {
+      "beeps": [
+        { "freq": 1175, "ms": 120 },
+        { "freq": 784, "ms": 200 }
+      ]
+    }
+  }
+}

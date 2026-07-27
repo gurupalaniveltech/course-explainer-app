@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/notify.ps1\" -Kind input",
+            "timeout": 15,
+            "statusMessage": "Pinging you..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/notify.ps1\" -Kind done",
+            "timeout": 15,
+            "statusMessage": "Pinging you..."
+          }
+        ]
+      }
+    ]
+  }
+}
