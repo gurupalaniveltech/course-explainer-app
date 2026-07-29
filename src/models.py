@@ -18,4 +18,6 @@ courses = [
            ["Statistics Basics", "Python for Data Science", "Data Visualization", "Machine Learning Introduction"]),
     Course("Go Programming Essentials", "Master Go programming language from basics to advanced concepts.", "Robert Chen", "5 weeks",
            ["Go Basics and Syntax", "Goroutines and Concurrency", "Channels and Synchronization", "Web Services with Go", "Testing and Deployment"]),
+    Course("Introduction to Claude", "Learn the basics of Claude programming.", "Rajan", "4 weeks",
+           ["Setup", "Basics", "MCP Integration"]),
 ]

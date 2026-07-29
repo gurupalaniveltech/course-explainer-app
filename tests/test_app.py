@@ -22,6 +22,15 @@ class AppTestCase(unittest.TestCase):
         self.assertIn(b'Data Science Fundamentals', response.data)
         self.assertIn(b'Go Programming Essentials', response.data)
 
+    def test_index_lists_claude_course(self):
+        """Test that the Introduction to Claude course appears on the home page"""
+        response = self.app.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Introduction to Claude', response.data)
+        self.assertIn(b'Learn the basics of Claude programming.', response.data)
+        self.assertIn(b'Rajan', response.data)
+        self.assertIn(b'4 weeks', response.data)
+
     def test_course(self):
         response = self.app.get('/course/1')
         self.assertEqual(response.status_code, 200)
@@ -32,6 +41,18 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Go Programming Essentials', response.data)
         self.assertIn(b'Robert Chen', response.data)
+
+    def test_claude_course(self):
+        """Test the Introduction to Claude course detail page"""
+        response = self.app.get('/course/5')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Introduction to Claude', response.data)
+        self.assertIn(b'Learn the basics of Claude programming.', response.data)
+        self.assertIn(b'Rajan', response.data)
+        self.assertIn(b'4 weeks', response.data)
+        self.assertIn(b'Setup', response.data)
+        self.assertIn(b'Basics', response.data)
+        self.assertIn(b'MCP Integration', response.data)
 
     # Contact Page Tests
     def test_contact_page_loads(self):
